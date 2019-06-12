@@ -7,6 +7,9 @@ build:
     - image: quay.io/presslabs/default-backend
       docker:
         dockerfile: Dockerfile.default-backend
+    - image: quay.io/presslabs/git-webhook
+      docker:
+        dockerfile: Dockerfile.git-webhook
 deploy:
   helm:
     releases:
@@ -15,10 +18,12 @@ deploy:
         chartPath: chart/stack
         values:
           nginx-ingress.defaultBackend.image: quay.io/presslabs/default-backend
+          git-webhook.image: quay.io/presslabs/git-webhook
         setValues:
           cert-manager.enabled: false
           prometheus-operator.enabled: false
           mysql-operator.enabled: false
           wordpress-operator.enabled: false
+
         imageStrategy:
           helm: {}

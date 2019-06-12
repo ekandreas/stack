@@ -14,5 +14,8 @@ dependencies:
 - name: prometheus-operator
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 5.12.3
-digest: sha256:91f72efe8bbf3e56a8388c488df3e58d3d262ed53afa915228690a18ef0dd47c
-generated: 2019-06-13T13:21:05.039878+03:00
+- name: git-webhook
+  repository: file://../git-webhook
+  version: 0.0.1+master
+digest: sha256:183de137260635560669e200ab111013b44ad82140975d4e78e2f85736d37362
+generated: 2019-06-13T13:49:50.246024869+03:00
